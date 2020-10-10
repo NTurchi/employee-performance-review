@@ -1,0 +1,294 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "accountName": "nbar",
+            "firstName": "Nicolas",
+            "mail": "nbar@test.jp",
+            "lastName": "Bar",
+            "department": "Development",
+            "sessionId": "TEST_SESSION_ID",
+            "roles": [
+                "ADMIN",
+                "EMPLOYEE"
+            ]
+        },
+        {
+            "id": 2,
+            "accountName": "afoo",
+            "firstName": "Alexis",
+            "mail": "afoo@test.jp",
+            "lastName": "Foo",
+            "department": "Development",
+            "sessionId": "TEST_SESSION_ID_2",
+            "roles": [
+                "EMPLOYEE",
+                "ADMIN"
+            ]
+        },
+        {
+            "id": 3,
+            "accountName": "afoo",
+            "firstName": "Test",
+            "mail": "afoo@test.jp",
+            "lastName": "Foo",
+            "department": "Development",
+            "sessionId": "TEST_SESSION_ID_2",
+            "roles": [
+                "EMPLOYEE"
+            ]
+        }
+    ],
+    "usersCursor": {
+        "metadata": {
+            "prev_cursor": null,
+            "next_cursor": null
+        },
+        "search_result": [
+            {
+                "id": 1,
+                "accountName": "nbar",
+                "firstName": "Nicolas",
+                "mail": "nbar@test.jp",
+                "lastName": "Bar",
+                "department": "Development",
+                "sessionId": "TEST_SESSION_ID",
+                "roles": [
+                    "ADMIN",
+                    "EMPLOYEE"
+                ]
+            },
+            {
+                "id": 2,
+                "accountName": "afoo",
+                "firstName": "Alexis",
+                "mail": "afoo@test.jp",
+                "lastName": "Foo",
+                "department": "Development",
+                "sessionId": "TEST_SESSION_ID_2",
+                "roles": [
+                    "EMPLOYEE"
+                ]
+            },
+            {
+                "id": 3,
+                "accountName": "afoo",
+                "firstName": "Test",
+                "mail": "afoo@test.jp",
+                "lastName": "Foo",
+                "department": "Development",
+                "sessionId": "TEST_SESSION_ID_2",
+                "roles": [
+                    "EMPLOYEE"
+                ]
+            }
+        ]
+    },
+    "roles": [
+        {
+            "id": 1,
+            "name": "ADMIN"
+        },
+        {
+            "id": 2,
+            "name": "STAFF"
+        }
+    ],
+    "userRole": [
+        {
+            "usersId": 1,
+            "rolesId": 1
+        },
+        {
+            "usersId": 1,
+            "rolesId": 2
+        }
+    ],
+    "performanceReviewsCursor": {
+        "metadata": {
+            "prev_cursor": null,
+            "next_cursor": null
+        },
+        "search_result": [
+            {
+                "id": 1,
+                "dueDate": "2020-10-07T10:08:58",
+                "usersId": 2
+            },
+            {
+                "id": 2,
+                "dueDate": "2020-10-10T10:50:00",
+                "usersId": 1
+            },
+            {
+                "id": 3,
+                "dueDate": "2020-10-10T10:50:00",
+                "usersId": 1
+            },
+            {
+                "id": 4,
+                "dueDate": "2020-10-10T10:50:00",
+                "usersId": 1
+            },
+            {
+                "id": 5,
+                "dueDate": "2020-10-10T10:50:00",
+                "usersId": 1
+            },
+            {
+                "id": 6,
+                "dueDate": "2020-10-10T10:50:00",
+                "usersId": 1
+            },
+            {
+                "id": 7,
+                "dueDate": "2020-10-10T10:50:00",
+                "usersId": 1
+            },
+            {
+                "id": 8,
+                "dueDate": "2020-10-10T10:50:00",
+                "usersId": 1
+            },
+            {
+                "id": 9,
+                "dueDate": "2020-10-10T10:50:00",
+                "usersId": 1
+            },
+            {
+                "id": 10,
+                "dueDate": "2020-10-10T10:50:00",
+                "usersId": 1
+            },
+            {
+                "id": 11,
+                "dueDate": "2020-10-10T10:50:00",
+                "usersId": 1
+            },
+            {
+                "id": 12,
+                "dueDate": "2020-10-10T10:50:00",
+                "usersId": 1
+            },
+            {
+                "id": 13,
+                "dueDate": "2020-10-10T10:50:00",
+                "usersId": 1
+            },
+            {
+                "id": 14,
+                "dueDate": "2020-10-10T10:50:00",
+                "usersId": 1
+            }
+        ]
+    },
+    "performanceReviews": [
+        {
+            "id": 1,
+            "dueDate": "2020-10-07T10:08:58",
+            "usersId": 2
+        },
+        {
+            "id": 2,
+            "dueDate": "2020-10-10T10:50:00",
+            "usersId": 1
+        },
+        {
+            "id": 3,
+            "dueDate": "2020-10-10T10:50:00",
+            "usersId": 1
+        },
+        {
+            "id": 4,
+            "dueDate": "2020-10-10T10:50:00",
+            "usersId": 1
+        },
+        {
+            "id": 5,
+            "dueDate": "2020-10-10T10:50:00",
+            "usersId": 1
+        },
+        {
+            "id": 6,
+            "dueDate": "2020-10-10T10:50:00",
+            "usersId": 1
+        },
+        {
+            "id": 7,
+            "dueDate": "2020-10-10T10:50:00",
+            "usersId": 1
+        },
+        {
+            "id": 8,
+            "dueDate": "2020-10-10T10:50:00",
+            "usersId": 1
+        },
+        {
+            "id": 9,
+            "dueDate": "2020-10-10T10:50:00",
+            "usersId": 1
+        },
+        {
+            "id": 10,
+            "dueDate": "2020-10-10T10:50:00",
+            "usersId": 1
+        },
+        {
+            "id": 11,
+            "dueDate": "2020-10-10T10:50:00",
+            "usersId": 1
+        },
+        {
+            "id": 12,
+            "dueDate": "2020-10-10T10:50:00",
+            "usersId": 1
+        },
+        {
+            "id": 13,
+            "dueDate": "2020-10-10T10:50:00",
+            "usersId": 1
+        },
+        {
+            "id": 14,
+            "dueDate": "2020-10-10T10:50:00",
+            "usersId": 1
+        }
+    ],
+    "userReviews": [
+        {
+            "performanceReviewsId": 1,
+            "userReviewerId": 1,
+            "qualityOfWork": 5,
+            "productivity": 4,
+            "meetDeadline": 3,
+            "knowledge": 4,
+            "communication": 4,
+            "comment": "Very nice employee. Very fun to work with",
+            "status": "SUBMITTED",
+            "submitDate": "2020-10-04T10:50:00"
+        },
+        {
+            "performanceReviewsId": 1,
+            "userReviewerId": 1,
+            "qualityOfWork": 5,
+            "productivity": 4,
+            "meetDeadline": 3,
+            "knowledge": 4,
+            "communication": 4,
+            "comment": "Very nice employee. Very fun to work with",
+            "status": "NOT_SUBMITTED",
+            "submitDate": "2020-10-04T10:50:00"
+        },
+        {
+            "performanceReviewsId": 2,
+            "userReviewerId": 2,
+            "qualityOfWork": 2.5,
+            "productivity": 2.5,
+            "meetDeadline": 2.5,
+            "knowledge": 2.5,
+            "communication": 2.5,
+            "comment": "",
+            "status": "NOT_SUBMITTED"
+        }
+    ]
+}

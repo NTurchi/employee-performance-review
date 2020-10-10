@@ -1,0 +1,164 @@
+{
+    "app": {
+        "paypay-performance-review-manager": {
+            "common": {
+                "details": "Details",
+                "edit": "Edit",
+                "delete": "Delete",
+                "language-changed": "Language has been changed"
+            },
+            "login": {
+                "title": "PayPay Performance Review Manager",
+                "username": "Mail",
+                "password": "Password",
+                "usernameEmpty": "Please fill your account name",
+                "passwordEmpty": "Please fill you password",
+                "loginButton": "Login",
+                "support-button-href": "https://paypay.ne.jp/"
+            },
+            "home-menu": {
+                "menu-item-reviews": "My reviews",
+                "menu-item-logout": "Logout",
+                "menu-item-admin-users": "Users",
+                "menu-item-admin-reviews": "Perfomance Reviews"
+            },
+            "my-reviews": {
+                "reload-button": "Reload",
+                "title": "Reviews to submit",
+                "review-of": "{{user}}",
+                "default-title": "Employee Full Name Not Found - Contact Support",
+                "due-date-for": "Department: {{department}} | Submit before: {{date}}",
+                "success-submitted": "Performance review submitted"
+            },
+            "users-manager": {
+                "title": "Manage Users",
+                "create-button": "Create",
+                "default-title": "Employee Full Name Not Found - Contact Support",
+                "dpt": "Department: {{department}}",
+                "search-placeholder": "First name, last name, department...",
+                "user-deleted": " {{user}} has been deleted with success",
+                "delete-user-title": "Are you sure to delete the user?",
+                "confirm-delete": "Confirm",
+                "cancel-delete": "Cancel"
+            },
+            "user-creation-update": {
+                "creation-title": "User Creation",
+                "update-title": "User Update",
+                "creation-button": "Create",
+                "update-button": "Update",
+                "password": "Password",
+                "password-confirm": "Password Confirmation",
+                "password-error": "Password is required",
+                "password-rule-error": "Password should have a length of 8 and should contains at leat one uppercase character, one lowercase character and one number",
+                "password-confirmation-error": "Passwords do no match",
+                "mail": "Mail",
+                "mail-error": "A correct mail is required",
+                "first-name": "First Name",
+                "first-name-error": "First Name is required",
+                "last-name": "Last Name",
+                "last-name-error": "Last Name is required",
+                "department": "Department",
+                "department-error": "Department is required",
+                "roles": "Roles",
+                "roles-error": "One role (at least) is required",
+                "confirm": "Confirm",
+                "update-success-message": "User Updated",
+                "creation-success-message": "User Created",
+                "select-employee-placeholder": "Select the employee",
+                "role-employee": "Employee",
+                "role-admin": "Admin",
+                "creation-confirm-title": "Are you sure to create this user?",
+                "update-confirm-title": "Are you sure to update this user?",
+                "cancel": "Cancel"
+            },
+            "review-manager": {
+                "title": "Manage Performance Reviews",
+                "create-button": "Create",
+                "review-of": "{{user}}'s Review",
+                "default-title": "Employee Full Name Not Found - Contact Support",
+                "due-date-for": "Department: {{department}} | End date: {{date}}",
+                "search-placeholder": "Search by employee full name"
+            },
+            "review-details": {
+                "review-of": "{{user}}'s Review",
+                "department": "Department",
+                "due-date": "Close Date",
+                "reviewers": "Reviewers",
+                "reviewer-name": "Full Name",
+                "reviews-submitted": "Reviews Submitted",
+                "review-from": "Reviews",
+                "click-for-review-details": "Show Review Details"
+            },
+            "submit-performance-review": {
+                "review-of": "Review of {{user}}",
+                "comment": "Comment",
+                "submit-button": "Submit",
+                "evaluate": "Please evaluate the employee according to the following criteria",
+                "any-comment": "Do you have any comment?",
+                "evaluation": "Evaluation",
+                "submit-confirm-title": "Confirm submission?",
+                "confirm": "Yes",
+                "cancel": "No"
+            },
+            "user-review-details": {
+                "review-from": "Review from {{user}}",
+                "comment": "Comment",
+                "submit-date": "Submit Date",
+                "result": "Result"
+            },
+            "components-review-criteria-list": {
+                "work-quality": "Work Quality",
+                "productivity": "Productivity",
+                "deadline": "Ability To Meet Deadlines",
+                "knowledge": "Job Knowledge",
+                "communication": "Ability to communicate with other members"
+            },
+            "review-creation": {
+                "title": "Performance Review Creation",
+                "target-employee": "Employee",
+                "reviewers": "Reviewers",
+                "employees": "Employees",
+                "end-date": "Close Date",
+                "modifier-button": "Create",
+                "confirm-title": "Are you sure to create this performance review?",
+                "confirm": "Confirm",
+                "success-message": "Performance Review Process Created",
+                "cancel": "Cancel",
+                "select-employee-placeholder": "Select the employee"
+            },
+            "review-update": {
+                "title": "Performance Review Update",
+                "reviewers": "Reviewers",
+                "employees": "Employees",
+                "end-date": "Close Date",
+                "modifier-button": "Update",
+                "confirm-title": "Are you sure to update this performance review?",
+                "confirm": "Confirm",
+                "success-message": "Performance Review Updated",
+                "cancel": "Cancel"
+            },
+            "error-templates": {
+                "not-found": {
+                    "title": "NOT FOUND",
+                    "sub-title": "Oops! The ressource you are looking for doesn't exist",
+                    "button-label": "Back"
+                },
+                "server-error": {
+                    "title": "SERVER ERROR",
+                    "sub-title": "Please contact the support",
+                    "button-label": "Back"
+                },
+                "server-down": {
+                    "title": "SERVER DOWN",
+                    "sub-title": "Please contact the support",
+                    "button-label": "Retry"
+                },
+                "unauthorized": {
+                    "title": "UNAUTHORIZED",
+                    "sub-title": "You are not allowed to access this ressource",
+                    "button-label": "Back"
+                }
+            }
+        }
+    }
+}

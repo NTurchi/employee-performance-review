@@ -1,0 +1,37 @@
+@import "../../screenType.less";
+
+.UsersManager {
+	.UsersManager-content {
+		padding: 16px 24px;
+	}
+
+	.UsersManager-input {
+		width: 300px;
+	}
+	.UsersManager-input__container {
+		padding-bottom: 10px;
+	}
+
+	.UsersManager-reviewList {
+		margin-top: 25px;
+	}
+	.UsersManager-reviewList__container {
+		overflow: auto;
+		height: 790px;
+		@media @big-wide-screen {
+			height: 790px;
+		}
+		@media @wide-screen-down {
+			height: 600px;
+		}
+		@media @desktop-down {
+			height: 790px;
+		}
+		@media @tablet-down {
+			height: 850px;
+		}
+		@media @phone-down {
+			height: 600px;
+		}
+	}
+}
