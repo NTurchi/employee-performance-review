@@ -20,20 +20,16 @@ export interface IResultWithCursorMetadata<IResult> {
 }
 
 /**
- * Shortcut for making Http request
+ * Shortcut for handling Http request
  *
  * @param fetchRequest
  */
-export const baseRequest = <T>(fetchRequest: Promise<Response>) =>
-	fetchRequest.then(
-		(res) => handleResponse<T>(res),
-		(err) => handleError(err)
-	) as Promise<T>
-
 export const baseRequestAxios = <T>(fetchRequest: Promise<AxiosResponse>) =>
 	fetchRequest.then(
 		(res) => res.data,
-		(err: AxiosError) => handleError(err.response?.data)
+		(err: AxiosError) => {
+			throw parseError(err.response?.data, err.response?.status || 500)
+		}
 	) as Promise<T>
 
 /**
@@ -80,7 +76,6 @@ export async function handleResponse<T>(response: Response): Promise<T> {
 }
 
 export function handleError(error: any) {
-	console.log(error)
 	throw parseError(error, 503) // we can put 500 because it mostly server_down
 }
 
