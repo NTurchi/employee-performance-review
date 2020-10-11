@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from "react"
-import { Layout, Menu } from "antd"
+import { Layout, Menu, Typography } from "antd"
 import { RouteComponentProps, navigate, Router } from "@reach/router"
 import { actions } from "../state/ducks/session"
 import { usersAPI } from "../api"
@@ -146,6 +146,15 @@ const Home: FC<RouteComponentProps> = ({ location }) => {
 							.map(RenderMenuItem)}
 					</Menu>
 					<Menu theme="light" mode="inline">
+						<Menu.Item
+							disabled={true}
+							style={{ cursor: "default" }}
+						>
+							<Typography.Text type="secondary">
+								{userMetadata &&
+									`${userMetadata?.firstName} ${userMetadata?.lastName}`}
+							</Typography.Text>
+						</Menu.Item>
 						<Menu.Item
 							onClick={onLogoutButtonClicked}
 							icon={<LogoutOutlined />}

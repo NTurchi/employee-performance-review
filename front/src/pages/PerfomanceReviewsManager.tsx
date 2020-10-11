@@ -157,7 +157,7 @@ const PerfomanceReviewsManager: FC<RouteComponentProps> = () => {
 						useWindow={false}
 					>
 						<List
-							loading={!!perfSelectedForDetails || isLoading}
+							loading={!perfSelectedForDetails && isLoading}
 							itemLayout="horizontal"
 							dataSource={performanceReviews.map(mapTitle)}
 							renderItem={(

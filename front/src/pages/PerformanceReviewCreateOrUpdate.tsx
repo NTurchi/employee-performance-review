@@ -107,6 +107,7 @@ const PerformanceReviewCreateOrUpdate: FC<{
 	) => setSelectedEmployees(newSelectedEmployeeAsReviewer)
 
 	const onTargetEmployeeSelected = (userId: string) => {
+		setReviewers(reviewers.filter((r) => r !== userId))
 		setTargetUser(users.find((u) => u.id.toString() === userId))
 	}
 
@@ -219,8 +220,15 @@ const PerformanceReviewCreateOrUpdate: FC<{
 					>
 						{t("reviewers")}
 					</Typography.Title>
+					<Typography.Text
+						type="secondary"
+						style={{ marginTop: "5px" }}
+					>
+						{t("reviewer-helper")}
+					</Typography.Text>
 					<Transfer
 						dataSource={userItems}
+						style={{ marginTop: "10px" }}
 						titles={[t("employees"), t("reviewers")]}
 						targetKeys={
 							performanceToUpdate && !blurred
@@ -237,7 +245,7 @@ const PerformanceReviewCreateOrUpdate: FC<{
 							(!targetUser && !performanceReviewId) || isLoading
 						}
 						showSearch={true}
-						listStyle={{ width: "300px" }}
+						listStyle={{ width: "300px", height: "400px" }}
 						oneWay
 					/>
 				</Col>

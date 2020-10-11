@@ -60,8 +60,8 @@ const Login: FC<RouteComponentProps & ILoginPageProps> = ({
 				<Select.Option value="jp" label="Japanese">
 					<div>
 						<span role="img" aria-label="Japanese">
-							{" "}
 							🇯🇵
+							{"  "}
 						</span>
 						Japanese (日本)
 					</div>
@@ -70,6 +70,7 @@ const Login: FC<RouteComponentProps & ILoginPageProps> = ({
 					<div>
 						<span role="img" aria-label="English">
 							🇺🇸
+							{"  "}
 						</span>
 						English (美国)
 					</div>

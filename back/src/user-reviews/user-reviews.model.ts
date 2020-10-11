@@ -18,7 +18,10 @@ export class UserReview {
     @Column()
     public reviewerId: number
 
-    @ManyToOne((_) => User, (u) => u.assignedReviews, { cascade: true })
+    @ManyToOne((_) => User, (u) => u.assignedReviews, {
+        cascade: true,
+        onDelete: "CASCADE"
+    })
     public reviewer!: User
 
     @ApiProperty({ example: 1 })
@@ -26,7 +29,8 @@ export class UserReview {
     public performanceReviewId: number
 
     @ManyToOne((_) => PerformanceReview, (u) => u.userReviews, {
-        cascade: true
+        cascade: true,
+        onDelete: "CASCADE"
     })
     public performanceReview!: PerformanceReview
 

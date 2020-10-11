@@ -28,7 +28,10 @@ export class PerformanceReview {
      * @type {string}
      * @memberof PerformanceReview
      */
-    @ManyToOne((_) => User, (u) => u.performanceReviews, { cascade: true })
+    @ManyToOne((_) => User, (u) => u.performanceReviews, {
+        cascade: true,
+        onDelete: "CASCADE"
+    })
     public targetUser: User
 
     /**

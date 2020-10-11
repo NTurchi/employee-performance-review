@@ -38,7 +38,7 @@ export class AuthService implements AbstractAuthService, OnModuleInit {
                 mail: "admin",
                 firstName: "admin",
                 lastName: "admin",
-                roles: [Roles.EMPLOYEE, Roles.ADMIN],
+                roles: [Roles.ADMIN],
                 department: "Administrator"
             })
         }

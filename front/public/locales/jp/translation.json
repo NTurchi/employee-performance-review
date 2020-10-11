@@ -1,163 +1,164 @@
 {
-    "app": {
-        "paypay-performance-review-manager": {
-            "common": {
-                "details": "詳細",
-                "edit": "編集",
-                "delete": "削除",
-                "language-changed": "アプリの言語が変更されました"
-            },
-            "login": {
-                "title": "PayPay性能レビューマネージャー",
-                "username": "メール",
-                "password": "パスワード",
-                "usernameEmpty": "メールを記入してください",
-                "passwordEmpty": "パスワードを入力してください",
-                "loginButton": "ログイン"
-            },
-            "home-menu": {
-                "menu-item-reviews": "私のレビュー",
-                "menu-item-logout": "ログアウト",
-                "menu-item-admin-users": "利用者",
-                "menu-item-admin-reviews": "性能レビュー"
-            },
-            "my-reviews": {
-                "reload-button": "リロード",
-                "title": "提出するレビュー",
-                "review-of": "{{user}}の性能レビュー",
-                "default-title": "Employee Full Name Not Found - Contact Support",
-                "due-date-for": "仕事部: {{department}} | 前に送信する: {{date}}",
-                "success-submitted": "Performance review submitted"
-            },
-            "users-manager": {
-                "title": "ユーザーの管理",
-                "create-button": "作成する",
-                "default-title": "Employee Full Name Not Found - Contact Support",
-                "dpt": "仕事部: {{department}}",
-                "search-placeholder": "名前, 仕事部 ...",
-                "user-deleted": " {{user}}は正常に削除されました。",
-                "delete-user-title": "必ずユーザーを削除していますか？",
-                "confirm-delete": "確認",
-                "cancel-delete": "取り消す"
-            },
-            "user-creation-update": {
-                "creation-title": "ユーザー作成",
-                "update-title": "ユーザー更新",
-                "creation-button": "作成する",
-                "update-button": "更新情報",
-                "password": "パスワード",
-                "password-confirm": "パスワード確認",
-                "password-error": "Password is required",
-                "password-rule-error": "Password should have a length of 8 and should contains at leat one uppercase character, one lowercase character and one number",
-                "password-confirmation-error": "Passwords do no match",
-                "mail": "メール",
-                "mail-error": "A correct mail is required",
-                "first-name": "名前",
-                "first-name-error": "First Name is required",
-                "last-name": "苗字",
-                "last-name-error": "Last Name is required",
-                "department": "仕事部",
-                "department-error": "Department is required",
-                "roles": "ユーザーの役割",
-                "roles-error": "One role (at least) is required",
-                "confirm": "確認",
-                "update-success-message": "ユーザーが更新しました。",
-                "creation-success-message": "ユーザーが作成しました。",
-                "role-employee": "従業員",
-                "role-admin": "管理者",
-                "creation-confirm-title": "このユーザーを作成したのは間違いないでしょうか？",
-                "update-confirm-title": "このユーザーは必ず更新していますか？",
-                "cancel": "キャンセル"
-            },
-            "review-manager": {
-                "title": "業績評価の管理",
-                "create-button": "作成する",
-                "review-of": "{{user}}さんのレビュー",
-                "default-title": "Employee Full Name Not Found - Contact Support",
-                "due-date-for": "仕事部: {{department}} | 終了日: {{date}}",
-                "search-placeholder": "従業員のフルネームで検索"
-            },
-            "review-details": {
-                "review-of": "{{user}}'s Review",
-                "department": "Department",
-                "due-date": "Close Date",
-                "reviewers": "Reviewers",
-                "reviewer-name": "Full Name",
-                "reviews-submitted": "Reviews Submitted",
-                "review-from": "Reviews",
-                "click-for-review-details": "Show Review Details"
-            },
-            "submit-performance-review": {
-                "review-of": "Review of {{user}}",
-                "comment": "Comment",
-                "submit-button": "Submit",
-                "success-submitted": "Performance review submitted",
-                "evaluate": "Please evaluate the employee according to the following criteria",
-                "any-comment": "Do you have any comment?",
-                "evaluation": "Evaluation",
-                "submit-confirm-title": "Confirm submission?",
-                "confirm": "Yes",
-                "cancel": "No"
-            },
-            "user-review-details": {
-                "review-from": "Review from {{user}}",
-                "comment": "Comment",
-                "submit-date": "Submit Date",
-                "result": "Result"
-            },
-            "components-review-criteria-list": {
-                "work-quality": "Work Quality",
-                "productivity": "Productivity",
-                "deadline": "Ability To Meet Deadlines",
-                "knowledge": "Job Knowledge",
-                "communication": "Ability to communicate with other members"
-            },
-            "review-creation": {
-                "title": "Performance Review Creation",
-                "target-employee": "Employee",
-                "reviewers": "Reviewers",
-                "employees": "Employees",
-                "end-date": "Close Date",
-                "modifier-button": "作成する",
-                "confirm-title": "Are you sure to create this performance review?",
-                "confirm": "Confirm",
-                "success-message": "Performance Review Process Created",
-                "cancel": "Cancel",
-                "select-employee-placeholder": "Select the employee"
-            },
-            "review-update": {
-                "title": "Performance Review Update",
-                "reviewers": "Reviewers",
-                "employees": "Employees",
-                "end-date": "Close Date",
-                "modifier-button": "Update",
-                "confirm-title": "Are you sure to update this performance review?",
-                "confirm": "Confirm",
-                "success-message": "Performance Review Updated",
-                "cancel": "Cancel"
-            },
-            "error-templates": {
-                "not-found": {
-                    "title": "NOT FOUND",
-                    "sub-title": "Oops! The ressource you are looking for doesn't exist",
-                    "button-label": "Back"
-                },
-                "server-error": {
-                    "title": "SERVER ERROR",
-                    "sub-title": "Please contact the support",
-                    "button-label": "Back"
-                },
-                "server-down": {
-                    "title": "SERVER DOWN",
-                    "sub-title": "Please contact the support",
-                    "button-label": "Retry"
-                },
-                "unauthorized": {
-                    "title": "UNAUTHORIZED",
-                    "sub-title": "You are not allowed to access this ressource",
-                    "button-label": "Back"
-                }
-            }
-        }
-    }
+	"app": {
+		"paypay-performance-review-manager": {
+			"common": {
+				"details": "詳細",
+				"edit": "編集",
+				"delete": "削除",
+				"language-changed": "アプリの言語が変更されました"
+			},
+			"login": {
+				"title": "PayPayパフォーマンスレビューマネージャー",
+				"username": "メール",
+				"password": "パスワード",
+				"usernameEmpty": "メールを記入してください",
+				"passwordEmpty": "パスワードを入力してください",
+				"loginButton": "ログイン"
+			},
+			"home-menu": {
+				"menu-item-reviews": "私のレビュー",
+				"menu-item-logout": "ログアウト",
+				"menu-item-admin-users": "利用者",
+				"menu-item-admin-reviews": "パフレビュー"
+			},
+			"my-reviews": {
+				"reload-button": "リロード",
+				"title": "提出するレビュー",
+				"review-of": "{{user}}の性能レビュー",
+				"default-title": "Employee Full Name Not Found - Contact Support",
+				"due-date-for": "仕事部: {{department}} | 前に送信する: {{date}}",
+				"success-submitted": "Performance review submitted"
+			},
+			"users-manager": {
+				"title": "ユーザーの管理",
+				"create-button": "作成する",
+				"default-title": "Employee Full Name Not Found - Contact Support",
+				"dpt": "仕事部: {{department}}",
+				"search-placeholder": "名前, 仕事部 ...",
+				"user-deleted": " {{user}}は正常に削除されました。",
+				"delete-user-title": "必ずユーザーを削除していますか？",
+				"confirm-delete": "確認",
+				"cancel-delete": "取り消す"
+			},
+			"user-creation-update": {
+				"creation-title": "ユーザー作成",
+				"update-title": "ユーザー更新",
+				"creation-button": "作成する",
+				"update-button": "更新情報",
+				"password": "パスワード",
+				"password-confirm": "パスワード確認",
+				"password-error": "Password is required",
+				"password-rule-error": "Password should have a length of 8 and should contains at leat one uppercase character, one lowercase character and one number",
+				"password-confirmation-error": "Passwords do no match",
+				"mail": "メール",
+				"mail-error": "A correct mail is required",
+				"first-name": "名前",
+				"first-name-error": "First Name is required",
+				"last-name": "苗字",
+				"last-name-error": "Last Name is required",
+				"department": "仕事部",
+				"department-error": "Department is required",
+				"roles": "ユーザーの役割",
+				"roles-error": "One role (at least) is required",
+				"confirm": "確認",
+				"update-success-message": "ユーザーが更新しました。",
+				"creation-success-message": "ユーザーが作成しました。",
+				"role-employee": "従業員",
+				"role-admin": "管理者",
+				"creation-confirm-title": "このユーザーを作成したのは間違いないでしょうか？",
+				"update-confirm-title": "このユーザーは必ず更新していますか？",
+				"cancel": "キャンセル"
+			},
+			"review-manager": {
+				"title": "業績評価の管理",
+				"create-button": "作成する",
+				"review-of": "{{user}}さんのレビュー",
+				"default-title": "Employee Full Name Not Found - Contact Support",
+				"due-date-for": "仕事部: {{department}} | 終了日: {{date}}",
+				"search-placeholder": "従業員のフルネームで検索"
+			},
+			"review-details": {
+				"review-of": "{{user}}'s Review",
+				"department": "Department",
+				"due-date": "Close Date",
+				"reviewers": "Reviewers",
+				"reviewer-name": "Full Name",
+				"reviews-submitted": "Reviews Submitted",
+				"review-from": "Reviews",
+				"click-for-review-details": "Show Review Details"
+			},
+			"submit-performance-review": {
+				"review-of": "Review of {{user}}",
+				"comment": "Comment",
+				"submit-button": "Submit",
+				"success-submitted": "Performance review submitted",
+				"evaluate": "Please evaluate the employee according to the following criteria",
+				"any-comment": "Do you have any comment?",
+				"evaluation": "Evaluation",
+				"submit-confirm-title": "Confirm submission?",
+				"confirm": "Yes",
+				"cancel": "No"
+			},
+			"user-review-details": {
+				"review-from": "Review from {{user}}",
+				"comment": "Comment",
+				"submit-date": "Submit Date",
+				"result": "Result"
+			},
+			"components-review-criteria-list": {
+				"work-quality": "Work Quality",
+				"productivity": "Productivity",
+				"deadline": "Ability To Meet Deadlines",
+				"knowledge": "Job Knowledge",
+				"communication": "Ability to communicate with other members"
+			},
+			"review-creation": {
+				"title": "Performance Review Creation",
+				"target-employee": "Employee",
+				"reviewers": "Reviewers",
+				"employees": "Employees",
+				"end-date": "Close Date",
+				"modifier-button": "作成する",
+				"reviewer-helper": "Select the employee(s) and click on the middle button to set them as reviewer(s)",
+				"confirm-title": "Are you sure to create this performance review?",
+				"confirm": "Confirm",
+				"success-message": "Performance Review Process Created",
+				"cancel": "Cancel",
+				"select-employee-placeholder": "Select the employee"
+			},
+			"review-update": {
+				"title": "Performance Review Update",
+				"reviewers": "Reviewers",
+				"employees": "Employees",
+				"end-date": "Close Date",
+				"modifier-button": "Update",
+				"confirm-title": "Are you sure to update this performance review?",
+				"confirm": "Confirm",
+				"success-message": "Performance Review Updated",
+				"cancel": "Cancel"
+			},
+			"error-templates": {
+				"not-found": {
+					"title": "NOT FOUND",
+					"sub-title": "Oops! The ressource you are looking for doesn't exist",
+					"button-label": "Back"
+				},
+				"server-error": {
+					"title": "SERVER ERROR",
+					"sub-title": "Please contact the support",
+					"button-label": "Back"
+				},
+				"server-down": {
+					"title": "SERVER DOWN",
+					"sub-title": "Please contact the support",
+					"button-label": "Retry"
+				},
+				"unauthorized": {
+					"title": "UNAUTHORIZED",
+					"sub-title": "You are not allowed to access this ressource",
+					"button-label": "Back"
+				}
+			}
+		}
+	}
 }
