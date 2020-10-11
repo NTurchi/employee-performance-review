@@ -18,7 +18,10 @@ import { JwtService } from "@nestjs/jwt"
 import { Request } from "@nestjs/common"
 import { SubmitReviewDto } from "./dto/submit-review.dto"
 import { BearerToken } from "../auth/bearer-token.decorator"
+import { ApiBody, ApiCookieAuth, ApiOkResponse, ApiTags } from "@nestjs/swagger"
 
+@ApiTags("User Reviews")
+@ApiCookieAuth()
 @Controller("user-reviews")
 @UseGuards(JwtAuthGuard, AuthRolesGuard)
 export class UserReviewsController {
@@ -33,6 +36,10 @@ export class UserReviewsController {
      */
     @Get()
     @ForRoles(Roles.EMPLOYEE)
+    @ApiOkResponse({
+        description: "User reviews of the user of the API",
+        type: UserReview
+    })
     async getUserReviews(
         @Query("status") status: UserReviewStatus | undefined,
         @BearerToken() bearer
@@ -50,11 +57,19 @@ export class UserReviewsController {
      */
     @Patch("/:performanceReviewId")
     @ForRoles(Roles.EMPLOYEE)
+    @ApiBody({
+        description: "User review",
+        type: SubmitReviewDto
+    })
+    @ApiOkResponse({
+        description: "User review submitted",
+        type: UserReview
+    })
     async submitUserReview(
         @Param("performanceReviewId") perfId: number,
         @Body() dto: SubmitReviewDto,
         @BearerToken() bearer
-    ): Promise<UserReview[]> {
+    ): Promise<UserReview> {
         if (bearer && perfId) {
             const { id } = this.jwtService.decode(bearer) as any
             return await this.userReviewService.submitUserReview(

@@ -70,7 +70,7 @@ export class PerformanceReviewsService
             reviewerId,
             status
         )
-        return this.usersService.getUserByIds(prs.map(p => p.targetUserId))
+        return this.usersService.getUserByIds(prs.map((p) => p.targetUserId))
     }
 
     async getPerformanceReviews(
@@ -166,7 +166,7 @@ export class PerformanceReviewsService
         // new reviewer
         for (const reviewerId of reviewers) {
             let review = performanceReview.userReviews.find(
-                u => u.reviewerId === reviewerId
+                (u) => u.reviewerId === reviewerId
             )
             if (!review) {
                 review = await this.createAUserReviewIfUserExist(
@@ -190,8 +190,8 @@ export class PerformanceReviewsService
         }
 
         // delete unselected reviewers
-        const unselectedReviewers = performanceReview.userReviews.filter(u =>
-            reviewers.find(id => u.reviewerId === id)
+        const unselectedReviewers = performanceReview.userReviews.filter(
+            (u) => !reviewers.find((id) => u.reviewerId === id)
         )
         for (const reviewer of unselectedReviewers) {
             await this.userReviewService.deleteUserReview(

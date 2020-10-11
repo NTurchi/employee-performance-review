@@ -2,29 +2,16 @@ import "@testing-library/jest-dom"
 // NOTE: jest-dom adds handy assertions to Jest and is recommended, but not required
 
 import React from "react"
-import { rest } from "msw"
-import { setupServer } from "msw/node"
 import { render, fireEvent, screen } from "@testing-library/react"
 import Login from "../Login"
 import { Provider } from "react-redux"
 import configureStore from "../../state/store"
-
-const apiServer = setupServer(
-	rest.get("/users/1", (req, res, ctx) => {
-		return res(ctx.json([]))
-	})
-)
 
 const store = configureStore()
 
 const Wrapper = ({ children }) => <Provider store={store}>{children}</Provider>
 
 beforeAll(() => {
-	apiServer.listen({
-		onUnhandledRequest: (req) => {
-			console.log(req)
-		},
-	})
 	Object.defineProperty(window, "matchMedia", {
 		writable: true,
 		value: jest.fn().mockImplementation((query) => ({
@@ -39,20 +26,8 @@ beforeAll(() => {
 		})),
 	})
 })
-afterEach(() => {
-	apiServer.resetHandlers()
-})
-afterAll(() => apiServer.close())
 
 test.skip("should handle server error", async () => {
-	apiServer.use(
-		rest.get("/users/1", (req, res, ctx) => {
-			return res(
-				ctx.status(500),
-				ctx.json({ message: "Internal server error" })
-			)
-		})
-	)
 	const onLoginSucceed = jest.fn()
 
 	render(

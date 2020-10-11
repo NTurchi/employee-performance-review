@@ -72,6 +72,7 @@ const PerfomanceReviewsManager: FC<RouteComponentProps> = () => {
 
 	// EFFECT
 	useUniqueEffect(() => {
+		dispatch(actions.resetPerformanceReviews())
 		dispatch(getUsers()) // should be done somwhere else
 		dispatch(getPerformanceReviews(undefined, undefined))
 	})

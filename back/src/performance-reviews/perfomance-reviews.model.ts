@@ -7,15 +7,18 @@ import {
 } from "typeorm"
 import { User } from "../users/users.model"
 import { UserReview } from "../user-reviews/user-reviews.model"
+import { ApiProperty } from "@nestjs/swagger"
 
 /**
  * Entity for PerformanceReview
  */
 @Entity()
 export class PerformanceReview {
+    @ApiProperty({ example: 1 })
     @PrimaryGeneratedColumn()
     public id: number
 
+    @ApiProperty({ example: 1 })
     @Column()
     public targetUserId: number
 
@@ -25,11 +28,7 @@ export class PerformanceReview {
      * @type {string}
      * @memberof PerformanceReview
      */
-    @ManyToOne(
-        _ => User,
-        u => u.performanceReviews,
-        { cascade: true }
-    )
+    @ManyToOne((_) => User, (u) => u.performanceReviews, { cascade: true })
     public targetUser: User
 
     /**
@@ -38,12 +37,10 @@ export class PerformanceReview {
      * @type {UserReview[]}
      * @memberof PerformanceReview
      */
-    @OneToMany(
-        _ => UserReview,
-        u => u.performanceReview
-    )
+    @OneToMany((_) => UserReview, (u) => u.performanceReview)
     public userReviews: UserReview[]
 
+    @ApiProperty({ example: "2020-10-11T12:27:13+09:00" })
     @Column({ type: "date" })
     public dueDate: string
 }
