@@ -103,12 +103,10 @@ $ ./node_modules/.bin/cypress open
 
 ```
 $ cd ./back
-$ ./node_modules/.bin/cypress open
+$ npm run test:full
 ```
 
-A swagger documentation is available at `http://localhost:2020/v1/api/swagger/#/`.
-
-To fully try out the API, you need to login through the `/v1/api/auth/login` endpoint (using the credentials below) and past the `access_token` in the `Authorize` section (button on the top right).
+> A swagger documentation is available at `http://localhost:2020/v1/api/swagger/#/`. To fully try out the API, you need to login through the `/v1/api/auth/login` endpoint (using the credentials below) and past the `access_token` in the `Authorize` section (button on the top right).
 
 ### Default User
 
