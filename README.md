@@ -118,8 +118,8 @@ $ npm run test:full
 
 This application was produced in a short time frame. Some compromises had to be made. If the application had to evolved, here's what could be done to improve it:
 
-- DTO Object should be for API call response data instead of entity model
-- Increase the test coverage of both back-end and front-end. Due to time restriction, only few tests has been made, Black Box UI tests & one test file on back-end side. In a real world project, every use case of the application should be tested.
+- DTO Object should always be used for API call response data instead of entity model
+- Increase the test coverage of both back-end and front-end. Due to time restriction only few tests has been made, Black Box UI tests & one test file on back-end side. In a real world project, every use case of the application should be tested.
 - Insead of using plain text api routes ([example](./front/src/api/authentication.ts#20)), all the route should be move to a config file or a metadata call on the API side
 - Use express rate limit for registering new user to avoid performance issue. Indeed, every password is hashed using `bcrypt` and it takes ressources on the server side every time an admin create a user
 - Reload the app logout the user. Should implment a `refresh_token` with the current `access_token` to avoid this. [more deails here](https://tools.ietf.org/html/rfc6749#section-1.5)
