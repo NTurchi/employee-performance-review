@@ -61,7 +61,7 @@ const ReviewCriteriaList: FC<{
 			onChange(
 				evaluationCriteriaPropsLabel.reduce<IUserReviewCriteria>( // make a new IReviewCriteria object with the new critera values
 					(newReviewC, [key, _], index) => {
-						newReviewC[key] = rateState[index]
+						newReviewC[key] = newRateState[index]
 						return newReviewC
 					},
 					{ ...review }
