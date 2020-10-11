@@ -44,7 +44,7 @@ $ yarn cypress:test # without cypress UI
 $ yarn ./node_modules/.bin/cypress open # with cypress UI
 ```
 
-## Assumptions, High level description of design & Libraries
+## Assumptions, high level description of design & Librairies
 
 ### Assumptions
 
