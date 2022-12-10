@@ -1,12 +1,17 @@
 # Pay Pay Full Stack Engineer Challenge
 
+Link to the challenge: https://github.com/paypay/FullStackEngineerChallenge
+
 ## Default Administrator (ADMIN VIEW)
 
 | Admin | Password |
 | ----- | -------- |
 | admin | admin    |
 
-Please use this user to create users (employee or admin) and performance reviews
+Please use this user to:
+
+- create users (employee or admin)
+- Assign a performance reviews to a user
 
 ## Run the application
 
@@ -14,6 +19,12 @@ Requirements:
 
 - NodeJS LTS 12.18.\*
 - yarn (or npm)
+
+> You can use nvm as well and execute this command to get the correct node version
+
+```shell
+nvm use
+```
 
 ### Back-end
 
@@ -24,12 +35,16 @@ $ yarn install
 $ yarn start
 
 # little tests
-$ npm run test:full
+$ yarn run test:full
 ```
 
 ### Back-end API description
 
-A swagger documentation is available at `http://localhost:2020/v1/api/swagger/#/`. To fully try out the API, you need to login through the `/v1/api/auth/login` endpoint (using the credentials below) and past the `access_token` in the `Authorize` section (button on the top right).
+A swagger documentation is available at `http://localhost:2020/v1/api/swagger/#/`.
+To fully try out the API:
+
+- Login through the `/v1/api/auth/login` endpoint (using the credentials below)
+- Past the `access_token` in the `Authorize` section (button on the top right).
 
 ### Front-end
 
@@ -44,7 +59,7 @@ $ yarn cypress:test # without cypress UI
 $ yarn ./node_modules/.bin/cypress open # with cypress UI
 ```
 
-## Assumptions, high level description of design & Librairies
+## Assumptions, high level description of design & Libraries
 
 ### Assumptions
 
@@ -93,12 +108,12 @@ $ yarn ./node_modules/.bin/cypress open # with cypress UI
 
 This application was produced in a short time frame. Some compromises had to be made. If the application had to evolved, here's what could be done to improve it:
 
-- Increase the test coverage of both back-end and front-end. Due to time restriction only few tests has been made, Black Box UI tests & one test file on back-end side. In a real world project, every use case of the application should be tested.
-- Insead of using plain text api routes ([example](./front/src/api/authentication.ts#20)), all the route should be move to a config file or a metadata call on the API side
-- Use express rate limit for registering new user to avoid performance issue. Indeed, every password is hashed using `bcrypt` and it takes ressources on the server side every time an admin create a user
-- Reload the app logout the user. Should implment a `refresh_token` with the current `access_token` to avoid this. [more deails here](https://tools.ietf.org/html/rfc6749#section-1.5)
+- Increase the test coverage of both back-end and front-end. Due to time restriction only few tests have been made, Black Box UI tests & one test file on back-end side. In a real world project, every use case of the application should be tested.
+- Instead of using plain text api routes ([example](./front/src/api/authentication.ts#20)), all the route should be move to a config file or a metadata call on the API side
+- Use express rate limit for registering new user to avoid performance issues. Indeed, every password is hashed using `bcrypt` and it takes resources on the server side every time an admin create a user
+- Reload the app disconnect the user. Should implements a `refresh_token` with the current `access_token` to avoid this. [more details here](https://tools.ietf.org/html/rfc6749#section-1.5)
 - The app currently use cookie to authenticate the user. However the security could be improved, especially to avoid `Cross-site request forgery attack` by using a `CSRF Token `https://portswigger.net/web-security/csrf/tokens
-- This application is intended to be used internally within a company. It may be relevant to shift the responsibility of the authentication and authorization part to an Identity Provider / Identity Manager / Authorization server. Such kind of service can support multiple authentication protocol and can integrate with existing enterprise applications. Example: [Identity Server](https://identityserver.io/)
+- This application is intended to be used internally within a company. It may be relevant to shift the responsibility of the authentication and authorization part to an Identity Provider / Identity Manager / Authorization server. Such kind of service can support multiple authentication protocol and can integrate with existing enterprise applications. Example: [Identity Server](https://identityserver.io/) / Okta
 
 ## Demo
 

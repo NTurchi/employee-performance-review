@@ -39,13 +39,13 @@ const Login: FC<RouteComponentProps & ILoginPageProps> = ({
 
 	const onLanguageChange = (language: string) => {
 		if (language !== i18n.language) {
-			i18n.changeLanguage(language).then((tr) =>
-				message.success(
-					tr(
-						"app.paypay-performance-review-manager.common.language-changed"
+			i18n
+				.changeLanguage(language)
+				.then((tr) =>
+					message.success(
+						tr("app.paypay-performance-review-manager.common.language-changed")
 					)
 				)
-			)
 		}
 	}
 
@@ -92,9 +92,7 @@ const Login: FC<RouteComponentProps & ILoginPageProps> = ({
 					>
 						<Input
 							placeholder={t("username")}
-							prefix={
-								<UserOutlined className="site-form-item-icon" />
-							}
+							prefix={<UserOutlined className="site-form-item-icon" />}
 						/>
 					</Form.Item>
 
@@ -108,9 +106,7 @@ const Login: FC<RouteComponentProps & ILoginPageProps> = ({
 						]}
 					>
 						<Input.Password
-							prefix={
-								<LockOutlined className="site-form-item-icon" />
-							}
+							prefix={<LockOutlined className="site-form-item-icon" />}
 							placeholder={t("password")}
 						/>
 					</Form.Item>

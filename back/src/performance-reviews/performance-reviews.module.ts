@@ -9,19 +9,19 @@ import { UsersModule } from "../users/users.module"
 import { UserReviewsModule } from "../user-reviews/user-reviews.module"
 
 const performanceReviewsServiceProvider: Provider<AbstractPerformanceReviewsService> = {
-    useClass: PerformanceReviewsService,
-    provide: AbstractPerformanceReviewsService
+  useClass: PerformanceReviewsService,
+  provide: AbstractPerformanceReviewsService
 }
 
 @Module({
-    providers: [performanceReviewsServiceProvider],
-    imports: [
-        TypeOrmModule.forFeature([PerformanceReview]),
-        AuthModule,
-        UsersModule,
-        UserReviewsModule
-    ],
-    exports: [performanceReviewsServiceProvider],
-    controllers: [PerformanceReviewController]
+  providers: [performanceReviewsServiceProvider],
+  imports: [
+    TypeOrmModule.forFeature([PerformanceReview]),
+    AuthModule,
+    UsersModule,
+    UserReviewsModule
+  ],
+  exports: [performanceReviewsServiceProvider],
+  controllers: [PerformanceReviewController]
 })
 export class PerformanceReviewsModule {}

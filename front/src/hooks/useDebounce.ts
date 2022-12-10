@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react"
 
 /**
  * Check if a value hasn't change during X ms and trigger rerender if it is the case
  *
- * @example 
- *  useDebounce("Nicolas", 300) -> 
+ * @example
+ *  useDebounce("Nicolas", 300) ->
  * @param value {any} any value
  * @param delay {number} in ms
  */

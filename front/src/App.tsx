@@ -29,17 +29,13 @@ const App: FC = () => {
 			<ErrorTemplates.NotFound {...{ t, onButtonClick }} />
 		),
 		[ErrorType.UNAUTHORIZED]: (
-			<ErrorTemplates.Unauthorized
-				{...{ t, onButtonClick: onErrorRest }}
-			/>
+			<ErrorTemplates.Unauthorized {...{ t, onButtonClick: onErrorRest }} />
 		),
 		[ErrorType.SERVER_ERROR]: (
 			<ErrorTemplates.ServerDown {...{ t, onButtonClick: onErrorRest }} />
 		),
 		[ErrorType.SERVER_DOWN]: (
-			<ErrorTemplates.ServerError
-				{...{ t, onButtonClick: onErrorRest }}
-			/>
+			<ErrorTemplates.ServerError {...{ t, onButtonClick: onErrorRest }} />
 		),
 	}
 

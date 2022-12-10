@@ -32,12 +32,12 @@ const MyReviews: FC<RouteComponentProps & { userId: number }> = ({
 	] = useState<INotSubmittedPerformanceReview | undefined>(undefined)
 
 	const onUserReviewSubmitted = (newReview: IUserReview) => {
-		dispatch(
-			submitUserReview(newReview.performanceReviewId, newReview)
-		).then(() => {
-			message.success(t("success-submitted"))
-			setSubmitEmployeeReviewDrawerOpen(undefined)
-		})
+		dispatch(submitUserReview(newReview.performanceReviewId, newReview)).then(
+			() => {
+				message.success(t("success-submitted"))
+				setSubmitEmployeeReviewDrawerOpen(undefined)
+			}
+		)
 	}
 
 	return (
@@ -47,12 +47,8 @@ const MyReviews: FC<RouteComponentProps & { userId: number }> = ({
 				submitEmployeeReviewDrawerOpen.targetEmployee && (
 					<SubmitPerformanceReview
 						review={submitEmployeeReviewDrawerOpen}
-						targetEmployee={
-							submitEmployeeReviewDrawerOpen.targetEmployee
-						}
-						onClose={() =>
-							setSubmitEmployeeReviewDrawerOpen(undefined)
-						}
+						targetEmployee={submitEmployeeReviewDrawerOpen.targetEmployee}
+						onClose={() => setSubmitEmployeeReviewDrawerOpen(undefined)}
 						onSubmit={onUserReviewSubmitted}
 					/>
 				)}
@@ -80,19 +76,13 @@ const MyReviews: FC<RouteComponentProps & { userId: number }> = ({
 							<List.Item
 								actions={[
 									<ListItemEndButton
-										onClick={() =>
-											setSubmitEmployeeReviewDrawerOpen(
-												item
-											)
-										}
+										onClick={() => setSubmitEmployeeReviewDrawerOpen(item)}
 										buttonType="EDIT"
 									/>,
 								]}
 							>
 								<List.Item.Meta
-									avatar={
-										<Avatar icon={<FileTextOutlined />} />
-									}
+									avatar={<Avatar icon={<FileTextOutlined />} />}
 									title={
 										item.targetEmployee
 											? t("review-of", {
@@ -101,13 +91,9 @@ const MyReviews: FC<RouteComponentProps & { userId: number }> = ({
 											: t("default-title")
 									}
 									description={t("due-date-for", {
-										department:
-											item.targetEmployee?.department,
+										department: item.targetEmployee?.department,
 										date: item.performanceReview
-											? dateUtil.formatDate(
-													item.performanceReview
-														.dueDate
-											  )
+											? dateUtil.formatDate(item.performanceReview.dueDate)
 											: "Unknown",
 									})}
 								/>

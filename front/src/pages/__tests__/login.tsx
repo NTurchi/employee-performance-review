@@ -65,9 +65,7 @@ test("should not call the api if the password is not filled", () => {
 	fireEvent.blur(screen.getByPlaceholderText(/password/i))
 
 	fireEvent.click(
-		screen.getByText(
-			"app.paypay-performance-review-manager.login.loginButton"
-		)
+		screen.getByText("app.paypay-performance-review-manager.login.loginButton")
 	)
 
 	expect(onLoginSucceed).toHaveBeenCalledTimes(0)

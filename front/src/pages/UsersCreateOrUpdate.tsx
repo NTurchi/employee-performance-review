@@ -60,9 +60,7 @@ const UserCreateOrUpdate: FC<{
 		roles: userToUpdate?.roles || [Roles.EMPLOYEE],
 	}
 	const [formValues, setFormValues] = useState(
-		userId
-			? defaultUserFormValues
-			: { ...defaultUserFormValues, password: "" }
+		userId ? defaultUserFormValues : { ...defaultUserFormValues, password: "" }
 	)
 
 	const { t } = useAppTranslation("user-creation-update")
@@ -128,9 +126,7 @@ const UserCreateOrUpdate: FC<{
 						placement="topRight"
 					>
 						<Button
-							disabled={
-								isLoading || formValues?.roles?.length === 0
-							}
+							disabled={isLoading || formValues?.roles?.length === 0}
 							type="primary"
 							loading={isLoading}
 						>
@@ -201,25 +197,14 @@ const UserCreateOrUpdate: FC<{
 									rules={[
 										{
 											required: true,
-											message: t(
-												"password-confirmation-error"
-											),
+											message: t("password-confirmation-error"),
 										},
 										({ getFieldValue }) => ({
 											validator(_, value) {
-												if (
-													!value ||
-													getFieldValue(
-														"password"
-													) === value
-												) {
+												if (!value || getFieldValue("password") === value) {
 													return Promise.resolve()
 												}
-												return Promise.reject(
-													t(
-														"password-confirmation-error"
-													)
-												)
+												return Promise.reject(t("password-confirmation-error"))
 											},
 										}),
 									]}

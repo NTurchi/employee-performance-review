@@ -63,9 +63,7 @@ const UsersManager: FC<RouteComponentProps> = () => {
 
 	const onDeleteUser = ({ id, firstName, lastName }: IUser) => {
 		dispatch(deleteUser(id)).then(() => {
-			message.success(
-				t("user-deleted", { user: `${firstName} ${lastName}` })
-			)
+			message.success(t("user-deleted", { user: `${firstName} ${lastName}` }))
 		})
 	}
 
@@ -145,9 +143,7 @@ const UsersManager: FC<RouteComponentProps> = () => {
 						<List
 							loading={isLoading}
 							itemLayout="horizontal"
-							dataSource={users
-								.map(mapTitle)
-								.filter(fullTextSearch)}
+							dataSource={users.map(mapTitle).filter(fullTextSearch)}
 							renderItem={(
 								item: IUser & {
 									title: string
@@ -158,32 +154,23 @@ const UsersManager: FC<RouteComponentProps> = () => {
 										item.id !== session.userMetadata?.id
 											? [
 													<Popconfirm
-														title={t(
-															"delete-user-title"
-														)}
+														title={t("delete-user-title")}
 														placement="topRight"
 														onConfirm={() => {
 															onDeleteUser(item)
 														}}
-														okText={t(
-															"confirm-delete"
-														)}
-														cancelText={t(
-															"cancel-delete"
-														)}
+														okText={t("confirm-delete")}
+														cancelText={t("cancel-delete")}
 													>
 														<ListItemEndButton buttonType="DELETE" />
 													</Popconfirm>,
 													<ListItemEndButton
 														buttonType="EDIT"
 														onClick={() =>
-															setUserCreateOrUpdateDrawerStatus(
-																{
-																	isOpen: true,
-																	userId:
-																		item.id,
-																}
-															)
+															setUserCreateOrUpdateDrawerStatus({
+																isOpen: true,
+																userId: item.id,
+															})
 														}
 													/>,
 											  ]
@@ -191,9 +178,7 @@ const UsersManager: FC<RouteComponentProps> = () => {
 									}
 								>
 									<List.Item.Meta
-										avatar={
-											<Avatar icon={<UserOutlined />} />
-										}
+										avatar={<Avatar icon={<UserOutlined />} />}
 										title={item.title}
 										description={t("dpt", {
 											department: item.department,

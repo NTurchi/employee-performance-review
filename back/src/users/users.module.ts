@@ -5,13 +5,13 @@ import { User } from "./users.model"
 import { AbstractUsersService } from "./users.service.abstract"
 
 const usersServiceProviders: Provider<AbstractUsersService> = {
-    useClass: UsersService,
-    provide: AbstractUsersService
+  useClass: UsersService,
+  provide: AbstractUsersService
 }
 
 @Module({
-    providers: [usersServiceProviders],
-    imports: [TypeOrmModule.forFeature([User])],
-    exports: [usersServiceProviders]
+  providers: [usersServiceProviders],
+  imports: [TypeOrmModule.forFeature([User])],
+  exports: [usersServiceProviders]
 })
 export class UsersModule {}

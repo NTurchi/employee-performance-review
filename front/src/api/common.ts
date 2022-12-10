@@ -2,6 +2,9 @@ import { ErrorType } from "../state/ducks/error"
 import { AxiosResponse, AxiosError } from "axios"
 import axios from "axios"
 
+/**
+ * Must be in an env file config or the bff should serve the SPA directly
+ */
 export const baseUrl = "http://localhost:2020/v1/api"
 
 /**
@@ -33,7 +36,7 @@ export const baseRequestAxios = <T>(fetchRequest: Promise<AxiosResponse>) =>
 	) as Promise<T>
 
 /**
- * Tansforms [ ["limit", 10], ["offset", 2o] ] to `?limit=10&offset=20`
+ * Transforms [ ["limit", 10], ["offset", 2o] ] to `?limit=10&offset=20`
  * @param queryParams example: [ ["limit", 10], ["offset", 2o] ]
  */
 export const getQueryParamsStringFromArray = (
@@ -48,7 +51,7 @@ export const getQueryParamsStringFromArray = (
 }
 
 /**
- * It doesn't take of every cases. It is just for the coding challenge. Could be improve
+ * It doesn't take consideration of every cases. It is just for the coding challenge. Could be improve
  * @param status
  */
 const getTypeFromStatus = (status: number) => {

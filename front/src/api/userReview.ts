@@ -66,12 +66,9 @@ export const getPerformanceReviewsFromReviewerId = (
 	status: UserReviewStatus
 ): Promise<IPerformanceReview[]> =>
 	baseRequestAxios(
-		axios.get(
-			`${baseUrl}/performance-reviews/my-reviews?status=${status}`,
-			{
-				withCredentials: true,
-			}
-		)
+		axios.get(`${baseUrl}/performance-reviews/my-reviews?status=${status}`, {
+			withCredentials: true,
+		})
 	)
 
 /**
@@ -84,10 +81,7 @@ export const getUsersFromReviewerId = (
 	status: UserReviewStatus
 ): Promise<IUser[]> =>
 	baseRequestAxios(
-		axios.get(
-			`${baseUrl}/performance-reviews/target-users?status=${status}`,
-			{
-				withCredentials: true,
-			}
-		)
+		axios.get(`${baseUrl}/performance-reviews/target-users?status=${status}`, {
+			withCredentials: true,
+		})
 	)

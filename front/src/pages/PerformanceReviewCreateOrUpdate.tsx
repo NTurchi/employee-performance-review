@@ -82,9 +82,7 @@ const PerformanceReviewCreateOrUpdate: FC<{
 		performanceReviewId
 			? userItems
 					.filter((item) =>
-						usersReviews.find(
-							(ur) => ur.reviewerId.toString() === item.key
-						)
+						usersReviews.find((ur) => ur.reviewerId.toString() === item.key)
 					)
 					.map((u) => u.key)
 			: []
@@ -138,9 +136,7 @@ const PerformanceReviewCreateOrUpdate: FC<{
 		})
 	}
 	const modifierButtonDisabled =
-		(!targetUser && !performanceReviewId) ||
-		!dueDate ||
-		reviewers.length === 0
+		(!targetUser && !performanceReviewId) || !dueDate || reviewers.length === 0
 	return (
 		<Drawer
 			width={640}
@@ -186,9 +182,7 @@ const PerformanceReviewCreateOrUpdate: FC<{
 							loading={isLoading}
 							onChange={onTargetEmployeeSelected}
 							filterOption={(input, option) =>
-								option?.children
-									.toLowerCase()
-									.indexOf(input.toLowerCase()) >= 0
+								option?.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
 							}
 						>
 							{userItems.map(({ key, title }) => (
@@ -220,10 +214,7 @@ const PerformanceReviewCreateOrUpdate: FC<{
 					>
 						{t("reviewers")}
 					</Typography.Title>
-					<Typography.Text
-						type="secondary"
-						style={{ marginTop: "5px" }}
-					>
+					<Typography.Text type="secondary" style={{ marginTop: "5px" }}>
 						{t("reviewer-helper")}
 					</Typography.Text>
 					<Transfer
@@ -232,18 +223,14 @@ const PerformanceReviewCreateOrUpdate: FC<{
 						titles={[t("employees"), t("reviewers")]}
 						targetKeys={
 							performanceToUpdate && !blurred
-								? usersReviews.map((u) =>
-										u.reviewerId.toString()
-								  )
+								? usersReviews.map((u) => u.reviewerId.toString())
 								: reviewers
 						}
 						selectedKeys={selectedEmployees}
 						onChange={handleReviewerChoiceChanged}
 						onSelectChange={handleSelectEmployeeChanged}
 						render={(item) => item.title as string}
-						disabled={
-							(!targetUser && !performanceReviewId) || isLoading
-						}
+						disabled={(!targetUser && !performanceReviewId) || isLoading}
 						showSearch={true}
 						listStyle={{ width: "300px", height: "400px" }}
 						oneWay

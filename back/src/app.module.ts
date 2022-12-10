@@ -11,23 +11,23 @@ import { UserReviewsModule } from "./user-reviews/user-reviews.module"
 import { UserReview } from "./user-reviews/user-reviews.model"
 
 @Module({
-    imports: [
-        AuthModule,
-        UserReviewsModule,
-        UsersModule,
-        PerformanceReviewsModule,
-        TypeOrmModule.forRoot({
-            type: "sqlite",
-            database: `${path.resolve(
-                __dirname,
-                ".."
-            )}/db/performance-review-app.sqlite`,
-            entities: [User, PerformanceReview, UserReview],
-            synchronize: true
-        }),
-        ConfigModule.forRoot({
-            isGlobal: true
-        })
-    ]
+  imports: [
+    AuthModule,
+    UserReviewsModule,
+    UsersModule,
+    PerformanceReviewsModule,
+    TypeOrmModule.forRoot({
+      type: "sqlite",
+      database: `${path.resolve(
+        __dirname,
+        ".."
+      )}/db/performance-review-app.sqlite`,
+      entities: [User, PerformanceReview, UserReview],
+      synchronize: true
+    }),
+    ConfigModule.forRoot({
+      isGlobal: true
+    })
+  ]
 })
 export class AppModule {}

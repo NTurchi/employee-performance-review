@@ -14,11 +14,7 @@ const RateResults = (
 ) => ({ label, value, key }: { label: string; value: number; key: number }) => (
 	<List.Item key={key}>
 		<List.Item.Meta title={label} />
-		<Rate
-			onChange={onValueChange(key)}
-			value={value}
-			disabled={!editable}
-		/>
+		<Rate onChange={onValueChange(key)} value={value} disabled={!editable} />
 	</List.Item>
 )
 

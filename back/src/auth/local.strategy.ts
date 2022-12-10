@@ -9,12 +9,12 @@ import { AbstractAuthService } from "./auth.service.abstract"
  */
 @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy) {
-    constructor(private authService: AbstractAuthService) {
-        super({
-            usernameField: "mail"
-        })
-    }
-    async validate(mail: string, password: string): Promise<User> {
-        return await this.authService.login(mail, password)
-    }
+  constructor(private authService: AbstractAuthService) {
+    super({
+      usernameField: "mail"
+    })
+  }
+  async validate(mail: string, password: string): Promise<User> {
+    return await this.authService.login(mail, password)
+  }
 }

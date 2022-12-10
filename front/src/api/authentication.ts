@@ -7,7 +7,7 @@ interface LoginResult {
 }
 
 /**
- * Login the user on the application
+ * Login the user into the application
  *
  * @export
  * @param {string} username

@@ -53,8 +53,7 @@ const onRoleIsAtLeastIncludedInMenuItem = (roles: usersAPI.Roles[]) => (
 	item: IMenuItems
 ) => {
 	return item.roles.reduce(
-		(include, currentRole) =>
-			include ? include : roles.includes(currentRole),
+		(include, currentRole) => (include ? include : roles.includes(currentRole)),
 		false
 	)
 }
@@ -69,9 +68,9 @@ const Home: FC<RouteComponentProps> = ({ location }) => {
 	const userRoles = userMetadata ? userMetadata.roles : []
 	const dispatch = useDispatch()
 	// PAGES STATE
-	const [menuItemSelected, setMenuItemSelected] = useState<
-		string | undefined
-	>(undefined)
+	const [menuItemSelected, setMenuItemSelected] = useState<string | undefined>(
+		undefined
+	)
 
 	const menuItems = [
 		{
@@ -96,9 +95,7 @@ const Home: FC<RouteComponentProps> = ({ location }) => {
 
 	useEffect(() => {
 		if (location) {
-			const item = menuItems.find((t) =>
-				location.pathname.includes(t.path)
-			)
+			const item = menuItems.find((t) => location.pathname.includes(t.path))
 			if (item) {
 				setMenuItemSelected(item ? item.path : undefined)
 			} else if (userRoles.includes(usersAPI.Roles.ADMIN)) {
@@ -132,24 +129,17 @@ const Home: FC<RouteComponentProps> = ({ location }) => {
 				<div className="Home-Menu__flex">
 					<Menu
 						theme="light"
-						selectedKeys={
-							menuItemSelected ? [menuItemSelected] : []
-						}
+						selectedKeys={menuItemSelected ? [menuItemSelected] : []}
 						mode="inline"
 					>
 						{menuItems
 							.filter(
-								onRoleIsAtLeastIncludedInMenuItem(
-									userRoles as usersAPI.Roles[]
-								)
+								onRoleIsAtLeastIncludedInMenuItem(userRoles as usersAPI.Roles[])
 							)
 							.map(RenderMenuItem)}
 					</Menu>
 					<Menu theme="light" mode="inline">
-						<Menu.Item
-							disabled={true}
-							style={{ cursor: "default" }}
-						>
+						<Menu.Item disabled={true} style={{ cursor: "default" }}>
 							<Typography.Text type="secondary">
 								{userMetadata &&
 									`${userMetadata?.firstName} ${userMetadata?.lastName}`}
@@ -170,9 +160,7 @@ const Home: FC<RouteComponentProps> = ({ location }) => {
 						{userMetadata && (
 							<RoleRoute
 								path={RoutePath.MY_REVIEWS}
-								Page={() => (
-									<MyReviews userId={userMetadata.id} />
-								)}
+								Page={() => <MyReviews userId={userMetadata.id} />}
 								roles={[Roles.EMPLOYEE, Roles.ADMIN]}
 								homePath={RoutePath.MY_REVIEWS}
 							/>
@@ -190,9 +178,7 @@ const Home: FC<RouteComponentProps> = ({ location }) => {
 							homePath={RoutePath.ADMIN_REVIEWS}
 						/>
 						<UsersManager path={RoutePath.ADMIN_US} />
-						<PerfomanceReviewsManager
-							path={RoutePath.ADMIN_REVIEWS}
-						/>
+						<PerfomanceReviewsManager path={RoutePath.ADMIN_REVIEWS} />
 					</Router>
 				</Content>
 			</Layout>

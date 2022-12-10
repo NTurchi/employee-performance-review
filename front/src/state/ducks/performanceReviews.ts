@@ -109,10 +109,7 @@ export default function reducer(
 		case CREATED_PERFORMANCE_REVIEWS:
 			return {
 				...state,
-				performanceReviews: [
-					...state.performanceReviews,
-					action.payload,
-				],
+				performanceReviews: [...state.performanceReviews, action.payload],
 			}
 		case UPDATED_PERFORMANCE_REVIEWS:
 			const index = state.performanceReviews.findIndex(
@@ -148,10 +145,7 @@ export const getPermorfanceReviewsFromReviewerId = (
 ) =>
 	executeAsyncAction(
 		() =>
-			userReviewsAPI.getPerformanceReviewsFromReviewerId(
-				reviewerId,
-				status
-			),
+			userReviewsAPI.getPerformanceReviewsFromReviewerId(reviewerId, status),
 		(res) =>
 			actions.gotPerformanceReviews({
 				metadata: { prev: undefined, next: undefined },

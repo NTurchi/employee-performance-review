@@ -10,18 +10,18 @@ import { Request } from "express"
  */
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
-    constructor(configService: ConfigService) {
-        super({
-            jwtFromRequest: ExtractJwt.fromExtractors([
-                (request: Request) => request?.cookies?.Authentication
-            ]),
-            ignoreExpiration: false,
-            passReqToCallback: true,
-            secretOrKey: configService.get("JWT_ACCESS_SECRET")
-        })
-    }
+  constructor(configService: ConfigService) {
+    super({
+      jwtFromRequest: ExtractJwt.fromExtractors([
+        (request: Request) => request?.cookies?.Authentication
+      ]),
+      ignoreExpiration: false,
+      passReqToCallback: true,
+      secretOrKey: configService.get("JWT_ACCESS_SECRET")
+    })
+  }
 
-    async validate(user) {
-        return user
-    }
+  async validate(user) {
+    return user
+  }
 }

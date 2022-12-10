@@ -54,9 +54,7 @@ const PerformanceReviewDetails: FC<{
 
 	const users = useSelector<AppState, IUser[]>((s) => s.users)
 
-	const targetUser = users.find(
-		(u) => u.id === performanceReview?.targetUserId
-	)
+	const targetUser = users.find((u) => u.id === performanceReview?.targetUserId)
 
 	const getUserInfos = () =>
 		targetUser
@@ -137,10 +135,7 @@ const PerformanceReviewDetails: FC<{
 				/>
 			)}
 			{/* CONENT */}
-			<Typography.Title
-				level={4}
-				className="PerformanceReviewDetails-title"
-			>
+			<Typography.Title level={4} className="PerformanceReviewDetails-title">
 				{t("review-of", { user: getUserInfos().fullName })}
 			</Typography.Title>
 			<Row>
@@ -155,19 +150,14 @@ const PerformanceReviewDetails: FC<{
 						title={t("due-date")}
 						value={
 							performanceReview
-								? dateUtil.formatWithHours(
-										performanceReview.dueDate
-								  )
+								? dateUtil.formatWithHours(performanceReview.dueDate)
 								: "Unknown"
 						}
 					/>
 				</Col>
 			</Row>
 			<Divider />
-			<Typography.Title
-				level={5}
-				className="PerformanceReviewDetails-title"
-			>
+			<Typography.Title level={5} className="PerformanceReviewDetails-title">
 				{t("reviewers")}
 			</Typography.Title>
 			<Row>
@@ -176,9 +166,7 @@ const PerformanceReviewDetails: FC<{
 						loading={isLoading}
 						columns={reviewersColumns}
 						dataSource={users
-							.filter((u) =>
-								usersReviews?.find((r) => r.reviewerId === u.id)
-							)
+							.filter((u) => usersReviews?.find((r) => r.reviewerId === u.id))
 							.map((prop, key) => ({ ...prop, key }))}
 						scroll={{ y: 300 }}
 						pagination={false}
@@ -186,10 +174,7 @@ const PerformanceReviewDetails: FC<{
 				</Col>
 			</Row>
 			<Divider />
-			<Typography.Title
-				level={5}
-				className="PerformanceReviewDetails-title"
-			>
+			<Typography.Title level={5} className="PerformanceReviewDetails-title">
 				{t("reviews-submitted")}
 			</Typography.Title>
 			<Row>
@@ -198,9 +183,7 @@ const PerformanceReviewDetails: FC<{
 						loading={isLoading}
 						columns={reviewSubmittedColumns}
 						dataSource={usersReviews
-							?.filter(
-								(r) => r.status === UserReviewStatus.SUBMITTED
-							)
+							?.filter((r) => r.status === UserReviewStatus.SUBMITTED)
 							.map(mapReviewSubmitted)}
 						scroll={{ y: 300 }}
 						pagination={false}

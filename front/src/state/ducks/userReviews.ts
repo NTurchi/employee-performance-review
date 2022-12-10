@@ -38,9 +38,7 @@ export const actions = {
 		type: GOT_USERS_REVIEWS,
 		payload,
 	}),
-	submitUserReview: (
-		payload: IUserReviewId
-	): ISubmittedUserReviewsAction => ({
+	submitUserReview: (payload: IUserReviewId): ISubmittedUserReviewsAction => ({
 		type: SUBMITTED_USER_REVIEWS,
 		payload,
 	}),
@@ -58,8 +56,7 @@ export default function reducer(
 			return state.filter(
 				(u) =>
 					!(
-						u.performanceReviewId ===
-							action.payload.performanceReviewId &&
+						u.performanceReviewId === action.payload.performanceReviewId &&
 						u.reviewerId === action.payload.reviewerId
 					)
 			)
@@ -74,9 +71,7 @@ export const getUserReviewsFromPerformanceReview = (
 ) =>
 	executeAsyncAction(
 		() =>
-			userReviewsAPI.getUserReviewsFromPerformanceReview(
-				performanceReviewId
-			),
+			userReviewsAPI.getUserReviewsFromPerformanceReview(performanceReviewId),
 		actions.gotUserReviews
 	)
 

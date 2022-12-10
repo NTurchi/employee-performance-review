@@ -56,11 +56,7 @@ const SubmitPerformanceReview: FC<{
 						cancelText={t("cancel")}
 						placement="topRight"
 					>
-						<Button
-							disabled={isLoading}
-							type="primary"
-							loading={isLoading}
-						>
+						<Button disabled={isLoading} type="primary" loading={isLoading}>
 							{t(`submit-button`)}
 						</Button>
 					</Popconfirm>
@@ -72,9 +68,7 @@ const SubmitPerformanceReview: FC<{
 			</Typography.Title>
 			<Row>
 				<Col span={24}>
-					<Typography.Text type="secondary">
-						{t("evaluate")}
-					</Typography.Text>
+					<Typography.Text type="secondary">{t("evaluate")}</Typography.Text>
 					<ReviewCriteriaList
 						editable={true}
 						onChange={setCriteriaReview}

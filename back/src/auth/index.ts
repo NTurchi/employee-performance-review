@@ -5,9 +5,9 @@ import { JwtAuthGuard } from "./jwt.guard"
 import { ForRoles } from "./for-roles.decorator"
 
 export {
-    AuthModule,
-    AbstractAuthService,
-    AuthRolesGuard,
-    JwtAuthGuard,
-    ForRoles
+  AuthModule,
+  AbstractAuthService,
+  AuthRolesGuard,
+  JwtAuthGuard,
+  ForRoles
 }

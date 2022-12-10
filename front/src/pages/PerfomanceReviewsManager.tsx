@@ -171,33 +171,24 @@ const PerfomanceReviewsManager: FC<RouteComponentProps> = () => {
 										<ListItemEndButton
 											onClick={() =>
 												setModifierOpenStatus({
-													performanceReviewId:
-														item.id,
+													performanceReviewId: item.id,
 													isOpen: true,
 												})
 											}
 											buttonType="EDIT"
 										/>,
 										<ListItemEndButton
-											onClick={() =>
-												setPerfSelectedForDetails(item)
-											}
+											onClick={() => setPerfSelectedForDetails(item)}
 											buttonType="DETAILS"
 										/>,
 									]}
 								>
 									<List.Item.Meta
-										avatar={
-											<Avatar
-												icon={<FileTextOutlined />}
-											/>
-										}
+										avatar={<Avatar icon={<FileTextOutlined />} />}
 										title={item.title}
 										description={t("due-date-for", {
 											department: item.department,
-											date: dateUtil.formatDate(
-												item.dueDate
-											),
+											date: dateUtil.formatDate(item.dueDate),
 										})}
 									/>
 								</List.Item>

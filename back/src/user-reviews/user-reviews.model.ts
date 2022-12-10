@@ -10,62 +10,62 @@ import { ApiProperty } from "@nestjs/swagger"
  */
 @Entity()
 export class UserReview {
-    // GOT AN ISSUE WITH COMPOSITE KEY AND TYPEORM. So as a quick fix I used a usual primary key
-    @PrimaryGeneratedColumn()
-    public id: number
+  // GOT AN ISSUE WITH COMPOSITE KEY AND TYPEORM. So as a quick fix I used a usual primary key
+  @PrimaryGeneratedColumn()
+  public id: number
 
-    @ApiProperty({ example: 1 })
-    @Column()
-    public reviewerId: number
+  @ApiProperty({ example: 1 })
+  @Column()
+  public reviewerId: number
 
-    @ManyToOne((_) => User, (u) => u.assignedReviews, {
-        cascade: true,
-        onDelete: "CASCADE"
-    })
-    public reviewer!: User
+  @ManyToOne((_) => User, (u) => u.assignedReviews, {
+    cascade: true,
+    onDelete: "CASCADE"
+  })
+  public reviewer!: User
 
-    @ApiProperty({ example: 1 })
-    @Column()
-    public performanceReviewId: number
+  @ApiProperty({ example: 1 })
+  @Column()
+  public performanceReviewId: number
 
-    @ManyToOne((_) => PerformanceReview, (u) => u.userReviews, {
-        cascade: true,
-        onDelete: "CASCADE"
-    })
-    public performanceReview!: PerformanceReview
+  @ManyToOne((_) => PerformanceReview, (u) => u.userReviews, {
+    cascade: true,
+    onDelete: "CASCADE"
+  })
+  public performanceReview!: PerformanceReview
 
-    @ApiProperty({
-        example: UserReviewStatus.SUBMITTED,
-        enum: UserReviewStatus
-    })
-    @Column()
-    public status: UserReviewStatus
+  @ApiProperty({
+    example: UserReviewStatus.SUBMITTED,
+    enum: UserReviewStatus
+  })
+  @Column()
+  public status: UserReviewStatus
 
-    @ApiProperty({ example: 3 })
-    @Column("text")
-    public comment: string
+  @ApiProperty({ example: 3 })
+  @Column("text")
+  public comment: string
 
-    @ApiProperty({ example: 3 })
-    @Column("int8")
-    public qualityOfWork: number
+  @ApiProperty({ example: 3 })
+  @Column("int8")
+  public qualityOfWork: number
 
-    @ApiProperty({ example: 3 })
-    @Column("int8")
-    public productivity: number
+  @ApiProperty({ example: 3 })
+  @Column("int8")
+  public productivity: number
 
-    @ApiProperty({ example: 3 })
-    @Column("int8")
-    public meetDeadline: number
+  @ApiProperty({ example: 3 })
+  @Column("int8")
+  public meetDeadline: number
 
-    @ApiProperty({ example: 3 })
-    @Column("int8")
-    public knowledge: number
+  @ApiProperty({ example: 3 })
+  @Column("int8")
+  public knowledge: number
 
-    @ApiProperty({ example: 3 })
-    @Column("int8")
-    public communication: number
+  @ApiProperty({ example: 3 })
+  @Column("int8")
+  public communication: number
 
-    @ApiProperty({ example: "2020-10-11T12:27:13+09:00" })
-    @Column("date", { nullable: true })
-    submitDate: string | undefined
+  @ApiProperty({ example: "2020-10-11T12:27:13+09:00" })
+  @Column("date", { nullable: true })
+  submitDate: string | undefined
 }
